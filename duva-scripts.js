@@ -1,4 +1,4 @@
-
+console.log("✅ DUVA script loaded correctly");
 
 // ✅ Title: Inject Selected Accessories into PDF Content //
 function injectAccessoriesIntoPDF() {
