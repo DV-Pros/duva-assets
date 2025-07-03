@@ -1,7 +1,6 @@
 
 
 // ✅ Title: Inject Selected Accessories into PDF Content //
-<script>
 function injectAccessoriesIntoPDF() {
   const accessoriesList = window.selectedAccessories;
 
@@ -54,11 +53,9 @@ function injectAccessoriesIntoPDF() {
 
   pdfContainer.appendChild(section);
 }
-</script>
 // ✅ End Inject Selected Accessories into PDF Content //
 
 // ✅ Accessory Checkbox Activation Script //
-<script>
   document.addEventListener("DOMContentLoaded", function () {
     // Select all accessory checkboxes
     const checkboxes = document.querySelectorAll('.accessory-checkbox');
@@ -95,11 +92,9 @@ function injectAccessoriesIntoPDF() {
       });
     });
   });
-</script>
 // ✅ End Accessory Checkbox Activation Script //
 
 // === Accessory Checkbox Toggle Script === //
-<script>
   document.addEventListener("DOMContentLoaded", function () {
     const accessoryCheckboxes = document.querySelectorAll(".accessory-checkbox");
 
@@ -113,7 +108,6 @@ function injectAccessoriesIntoPDF() {
 // === End Accessory Checkbox Toggle Script === //
 
 // === Accessory Checkbox JS: Track Selected Accessories (Full Info) === //
-<script>
   const accessoryCheckboxes = document.querySelectorAll('.accessory-checkbox');
   window.selectedAccessories = [];
 
@@ -144,11 +138,9 @@ function injectAccessoriesIntoPDF() {
       console.log("✅ Selected Accessories:", window.selectedAccessories);
     });
   });
-</script>
 // === End Accessory Checkbox JS === //
 
 // === JavaScript: Hover Zoom + Cursor Tracking for Accessory Images === //
-<script>
   document.querySelectorAll('.accessory-image').forEach(container => {
     const img = container.querySelector('img');
 
@@ -171,10 +163,8 @@ function injectAccessoriesIntoPDF() {
       img.style.transformOrigin = 'center center';
     });
   });
-</script>
 // === End JavaScript: Hover Zoom + Cursor Tracking === //
 
-<script>
   document.addEventListener("DOMContentLoaded", function () {
     const mainImage = document.getElementById("main-lightbox-trigger");
     const thumbnails = document.querySelectorAll(".thumbnail-image");
@@ -191,11 +181,9 @@ function injectAccessoriesIntoPDF() {
       });
     });
   });
-</script>
 // === End Simple Thumbnail Image Script === //
 
 // === Lightbox Trigger Redirect Script === //
-<script>
   document.addEventListener("DOMContentLoaded", function () {
     const mainTrigger = document.getElementById("main-lightbox-trigger");
     const firstGalleryItem = document.querySelector(".first-gallery-image");
@@ -207,10 +195,8 @@ function injectAccessoriesIntoPDF() {
       });
     }
   });
-</script>
 // === End Lightbox Trigger Script === //
 // === Product Configurator Script === //
-<script>
 document.addEventListener("DOMContentLoaded", function () {
   // === Global Selectors & State ===
   const dropdowns = document.querySelectorAll(".dropdown-wrapper");
@@ -480,11 +466,9 @@ document.addEventListener("DOMContentLoaded", function () {
     updateOrderingCode();
   }, 300);
 });
-</script>
 // === End Product Configurator Script === //
 
 // === DUVA Product Page Logic Script === //
-<script>
 document.addEventListener("DOMContentLoaded", function () {
 
   /* === Main Image Thumbnail Click Logic === */
@@ -744,11 +728,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 300);
 
 });
-</script>
 // === End DUVA Product Page Script === //
 
 // === DUVA Download Panel & Divider Script === //
-<script>
 document.addEventListener('DOMContentLoaded', function () {
 
   /* === Get Product Code Based on Current Selection === */
@@ -965,11 +947,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
-</script>
 // === End DUVA Download Panel & Divider Script === //
 
 // === Accessories Dropdown Toggle Script (Dynamic scrollHeight) === //
-<script>
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector(".accessories-toggle");
     const wrapper = document.querySelector(".accessories-wrapper");
@@ -991,17 +971,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   });
-</script>
 // === End Accessories Dropdown Toggle Script (Dynamic scrollHeight) === //
 
 
 // === DUVA Accessories PDF Export Script (Optimized) === //
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
 window.generatePDFWithAccessories = () => {
   const exportTarget = document.querySelector('.pdf-content');
   if (!exportTarget) return alert("Missing .pdf-content container");
 
+  html2pdf().set({
+    margin: 10,
+    filename: 'DUVA.pdf',
+  }).from(exportTarget).save();
+};
   // Show container temporarily for PDF rendering
   exportTarget.style.display = 'block';
   exportTarget.style.position = 'static';
@@ -1060,5 +1042,4 @@ window.generatePDFWithAccessories = () => {
     }).from(exportTarget).save();
   }, 300);
 };
-</script>
 // === End DUVA Accessories PDF Export Script === //
